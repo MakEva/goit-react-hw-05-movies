@@ -1,0 +1,11 @@
+.menu {
+  list-style: none;
+  display: flex;
+}
+.link {
+  text-decoration: none;
+  padding: 10px 15px;
+}
+.link:global(.active) {
+  color: red;
+}
