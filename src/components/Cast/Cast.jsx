@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { getMovieCredits } from '../../api/moviesApi';
 import { Loader } from 'components/Loader/Loader';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -57,3 +57,4 @@ export const Cast = () => {
     </ul>
   );
 };
+export default Cast;

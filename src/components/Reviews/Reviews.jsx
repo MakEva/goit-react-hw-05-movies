@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { getMovieReviews } from '../../api/moviesApi';
 import { Loader } from 'components/Loader/Loader';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -45,3 +45,4 @@ export const Reviews = () => {
     </ul>
   );
 };
+export default Reviews;

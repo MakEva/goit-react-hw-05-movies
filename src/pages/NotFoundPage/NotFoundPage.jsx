@@ -1,7 +1,6 @@
-import css from './not-found-page.module.css';
 import { Link } from 'react-router-dom';
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <div>
       <h1>Cannot find this page</h1>
@@ -9,3 +8,4 @@ export const NotFoundPage = () => {
     </div>
   );
 };
+export default NotFoundPage;
