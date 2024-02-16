@@ -30,6 +30,7 @@ export const MovieSearch = () => {
     if (!results) return;
     const getList = async () => {
       try {
+        setLoading(true);
         const { data } = await searchMovies(results);
         setListMovies(data.results);
       } catch (error) {

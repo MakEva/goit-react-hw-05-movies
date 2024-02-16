@@ -1,5 +1,5 @@
 import css from './movie-details.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import {
   Link,
   useParams,
@@ -16,10 +16,14 @@ export const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
 
   const { id } = useParams();
+  const location = useLocation();
+  const from = location.state?.from || '/';
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getList = async () => {
       try {
+        setLoading(true);
         const { data } = await getMovieDetails(id);
         setDetailsMovie(data);
       } catch (error) {
@@ -34,9 +38,6 @@ export const MovieDetails = () => {
   const { title, poster_path, overview, vote_average, genres } =
     detailsMovie || {};
 
-  const location = useLocation();
-  const from = location.state?.from || '/';
-  const navigate = useNavigate();
   const goBack = () => navigate(from);
 
   return (
@@ -70,18 +71,20 @@ export const MovieDetails = () => {
           <div className={css.addInfo}>
             <p className={css.info}>Additional information</p>
             <ul className={css.list}>
-              <li className={css.li}>
-                <Link className={css.link} to="cast">
+              <li>
+                <Link className={css.link} to={'cast'} state={{ from }}>
                   Cast
                 </Link>
               </li>
-              <li className={css.li}>
-                <Link className={css.link} to="reviews">
+              <li>
+                <Link className={css.link} to={'reviews'} state={{ from }}>
                   Reviews
                 </Link>
               </li>
             </ul>
-            <Outlet />
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
           </div>
         </>
       )}

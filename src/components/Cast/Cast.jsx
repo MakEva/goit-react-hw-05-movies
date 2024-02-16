@@ -14,8 +14,8 @@ const Cast = () => {
   useEffect(() => {
     const getList = async () => {
       try {
+        setLoading(true);
         const { data } = await getMovieCredits(id);
-        // const listCast = data.cast;
         setCast(data.cast);
       } catch (error) {
         setError(error.message);
@@ -53,7 +53,7 @@ const Cast = () => {
     <ul className={css.list}>
       {loading && <Loader />}
       {error && <p className={css.error}>Error: {error}</p>}
-      {cast?.length && castRender()}
+      {cast && cast.length > 0 ? castRender() : null}
     </ul>
   );
 };

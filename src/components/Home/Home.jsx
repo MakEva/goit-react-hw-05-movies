@@ -30,7 +30,12 @@ export const Home = () => {
       {error && <p className={css.error}>Error: {error}</p>}
       <h1>Trending today</h1>
       <ul className={css.list}>
-        {listMovies?.length && <MoviesList list={listMovies} />}
+        {/* {listMovies?.length && <MoviesList list={listMovies} />} */}
+        {listMovies && listMovies.length > 0 ? (
+          <MoviesList list={listMovies} />
+        ) : null}
+        {/* {cast && cast.length > 0 ? castRender() : null}
+        {cast?.length && castRender()} */}
       </ul>
     </div>
   );

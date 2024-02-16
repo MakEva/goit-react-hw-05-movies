@@ -14,6 +14,7 @@ const Reviews = () => {
   useEffect(() => {
     const getList = async () => {
       try {
+        setLoading(true);
         const { data } = await getMovieReviews(id);
         setReviews(data.results);
       } catch (error) {
