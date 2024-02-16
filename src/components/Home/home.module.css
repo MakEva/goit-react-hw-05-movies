@@ -1,0 +1,26 @@
+.container {
+  margin: 0 auto;
+  padding-left: 30px;
+  width: 1200px;
+  border: #333;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.error {
+  font-size: 18px;
+  color: red;
+  text-align: center;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}

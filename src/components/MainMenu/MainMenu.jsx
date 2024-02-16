@@ -1,6 +1,7 @@
 import css from './MainMenu.module.css';
 import { NavLink } from 'react-router-dom';
-const MainMenu = () => {
+
+export const MainMenu = () => {
   return (
     <ul className={css.menu}>
       <li>
@@ -16,5 +17,3 @@ const MainMenu = () => {
     </ul>
   );
 };
-
-export default MainMenu;

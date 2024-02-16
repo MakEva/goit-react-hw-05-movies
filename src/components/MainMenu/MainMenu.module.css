@@ -1,10 +1,13 @@
 .menu {
   list-style: none;
   display: flex;
+  margin-left: 150px;
 }
 .link {
   text-decoration: none;
   padding: 10px 15px;
+  font-size: large;
+  font-weight: bold;
 }
 .link:global(.active) {
   color: red;
